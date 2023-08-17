@@ -1,0 +1,47 @@
+scalar JSON
+
+type Query {
+  hello: String!
+  getVideoUrls: VideoURLList
+}
+
+type Mutation {
+  quote(symbol: String!): QuoteResult!
+  signIn(email: String!, password: String!): SignInObj!
+  register(
+    email: String!
+    password: String!
+    confirmPassword: String!
+  ): [RegisterObj!]
+}
+
+type QuoteResult {
+  avgTotalVolume: Float!
+  calculationPrice: String!
+  changePercent: Float!
+  closeSource: String!
+  iexLastUpdated: Float!
+  iexMarketPercent: Float!
+  iexRealtimePrice: Float!
+  peRatio: Float
+  symbol: String!
+}
+
+type SignInObj {
+  email: String!
+  password: String!
+}
+
+type RegisterObj {
+  email: String!
+  password: String!
+  confirmPassword: String!
+}
+
+type IdAndLink {
+  link: String!
+}
+
+type VideoURLList {
+  items: [IdAndLink]
+}
