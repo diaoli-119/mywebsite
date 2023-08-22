@@ -9,6 +9,7 @@ import {
   VideoPagination
 } from "../../Components/Pagination/index.jsx";
 import { VideoPlayer } from "../../Components/ReactPlayer/index.jsx";
+import {sortArrayRandomly} from '../../CommonFunctions/sortArrayRandomly';
 
 const PAGE_SIZE = 10;
 
@@ -24,19 +25,22 @@ const GETVIDEOURLS = gql`
 
 export const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const { data, loading } = useQuery(GETVIDEOURLS);
-console.log('data =', data)
+  const { data, loading } = useQuery(GETVIDEOURLS, {
+    fetchPolicy: 'cache-first',
+  });
   if (loading) {
     return <h1>Loading</h1>;
   }
 
-  const videos = data?.getVideoUrls?.items?.map((url) => (
+  const urls = sortArrayRandomly(data.getVideoUrls.items)
+  const videos = urls.map((url) => (
     <VideoPlayer url={url.link} />
   ));
 
   const totalPages = videos?.length > 0 ? calculateTotalPages(videos, PAGE_SIZE) : 1;
   const paginatedData = videos?.length > 0 ? paginateData(videos, PAGE_SIZE, currentPage) : null
 
+  console.log('urls =', paginatedData)
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
