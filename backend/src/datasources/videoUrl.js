@@ -1,10 +1,7 @@
-const { RESTDataSource } = require("apollo-datasource-rest");
 const { DatabaseProcess } = require("../db/databaseProcess");
-const { VideoProps } = require("../db/constant");
 
-class VideoURLS extends RESTDataSource {
+class VideoURLS  {
   constructor(databaseRepo = new DatabaseProcess()) {
-    super();
     this.databaseRepo = databaseRepo;
   }
 

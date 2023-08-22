@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Colors } from "../../Constants/ColorConstants";
-import { NavBar } from "../../Components/Navigation/index";
-import { Banners } from "../../Components/Banners/index";
+import { NavBar } from "../../Components/Navigation/index.jsx";
+import { Banners } from "../../Components/Banners/index.jsx";
 import { gql, useQuery } from "@apollo/client";
 import {
   paginateData,
   calculateTotalPages,
   VideoPagination
-} from "../../Components/Pagination/index";
-import { VideoPlayer } from "../../Components/ReactPlayer/index";
+} from "../../Components/Pagination/index.jsx";
+import { VideoPlayer } from "../../Components/ReactPlayer/index.jsx";
 
 const PAGE_SIZE = 10;
 
@@ -25,7 +25,7 @@ const GETVIDEOURLS = gql`
 export const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const { data, loading } = useQuery(GETVIDEOURLS);
-
+console.log('data =', data)
   if (loading) {
     return <h1>Loading</h1>;
   }

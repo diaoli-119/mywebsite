@@ -2,6 +2,10 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "mode": "production",
+  "browser": {
+    "./src/Router/index": "./src/Router/index.jsx"
+  },
   "dependencies": {
     "@apollo/client": "^3.7.17",
     "@apollo/react-hooks": "^4.0.0",
@@ -12,19 +16,17 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "classnames": "^2.3.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-player": "^2.12.0",
-    "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack --config webpack.config.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "rimraf dist"
   },
   "eslintConfig": {
     "extends": [
@@ -45,8 +47,16 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
+    "babel-loader": "^9.1.3",
     "css-loader": "^6.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
     "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   }
 }

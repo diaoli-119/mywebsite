@@ -4,7 +4,7 @@ import { Colors } from "../../Constants/ColorConstants";
 export const Banners = () => {
   return (
     <div style={bannerContainer}>
-      <h1>This is the Banner</h1>
+      <h1>Porn Station</h1>
     </div>
   );
 };

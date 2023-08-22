@@ -7,7 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:4001",
+  uri: "http://localhost:2082",
 });
 
 const client = new ApolloClient({

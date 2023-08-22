@@ -1,19 +1,18 @@
 const mysql = require('mysql2/promise');
-const { VideoProps } = require('./constant');
 
 class DatabaseProcess {
   constructor() {}
 
   async checkTableAndSelectData() {
     const connection = await mysql.createConnection({
-      host: 'au32.tmd.cloud',
+      host: '192.166.225.8',
       user: 'eksvideo_root',
-      password: '92n]PocV$+]b',
+      password: 'siS2xshBSxnSXAnH',
       database: 'eksvideo_videoresources',
     });
 
     try {
-      const selectQuery = `SELECT * FROM videosource`;
+      const selectQuery = `SELECT * FROM videoresource`;
 
       const [rows] = await connection.query(selectQuery);
 

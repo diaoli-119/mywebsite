@@ -1,7 +1,7 @@
 import React from "react";
-import { CommonText } from "../../Components/CommonText/index";
+import { CommonText } from "../../Components/CommonText/index.jsx";
 import { Colors } from "../../Constants/ColorConstants";
-import { NavBar } from "../../Components/Navigation/index";
+import { NavBar } from "../../Components/Navigation/index.jsx";
 
 export const About = () => {
   return (

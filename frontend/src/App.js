@@ -1,6 +1,6 @@
 import React from "react";
 import { Colors } from "./Constants/ColorConstants";
-import RoutePath from "./Routes";
+import {RoutePath} from "./Router/index";
 
 function App() {
   const appBackground = {

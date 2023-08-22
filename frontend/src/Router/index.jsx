@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { About } from "../Page/About/index";
-import { Contact } from "../Page/Contact/index";
-import { Home } from "../Page/Home/index";
+import { About } from "../Page/About/index.jsx";
+import { Contact } from "../Page/Contact/index.jsx";
+import { Home } from "../Page/Home/index.jsx";
 
-const RoutePath = () => {
+export const RoutePath = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -15,5 +15,3 @@ const RoutePath = () => {
     </BrowserRouter>
   );
 };
-
-export default RoutePath;

@@ -1,11 +1,13 @@
 const dotenv = require("dotenv");
 const { ApolloServer } = require("apollo-server"); // Import from apollo-server
 const { readFileSync } = require("fs");
+const path = require("path");
 const { resolvers } = require("./resolvers/resovler");
 const { VideoURLS } = require("./datasources/videoUrl");
 
 async function startApolloServer() {
-  const typeDefs = readFileSync("./schema/schema.graphql", "utf8");
+  const schemaPath = path.join(__dirname, "schema", "schema.graphql");
+  const typeDefs = readFileSync(schemaPath, "utf8");
   const server = new ApolloServer({
     typeDefs,
     resolvers,
