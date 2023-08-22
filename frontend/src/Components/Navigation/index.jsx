@@ -12,11 +12,11 @@ export const NavBar = () => {
 
   return (
     <div style={navContainer}>
-      <div style={leftContainer} onClick={() => naviToPage("/home")}>
+      <div style={leftContainer} onClick={() => naviToPage("/")}>
         HOT SEX XXXX VIDEOS
       </div>
       <div style={rightContainer}>
-        <div style={element} onClick={() => naviToPage("/home")}>
+        <div style={element} onClick={() => naviToPage("/")}>
           Home
         </div>
         <div style={element} onClick={() => naviToPage("/about")}>
