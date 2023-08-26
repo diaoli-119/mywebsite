@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import ReactPlayer from "react-player";
-import { Colors } from "../../Constants/ColorConstants";
+import React, { useState } from "react"
+import ReactPlayer from "react-player"
+import { Colors } from "../../Constants/ColorConstants"
 
-const httpLinkPrefix = 'https://eksvideo.com/videos/'
+const httpLinkPrefix = "https://sexypoolz.com/videos/"
 
 export const VideoPlayer = ({ url }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoUrl =`${httpLinkPrefix}${url}`;
-  console.log('videoUrl =', videoUrl);
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoUrl = `${httpLinkPrefix}${url}`
+  console.log("videoUrl =", videoUrl)
   return (
     <div style={videoDiv}>
       <ReactPlayer
@@ -22,13 +22,13 @@ export const VideoPlayer = ({ url }) => {
         style={{ cursor: "pointer" }}
       />
     </div>
-  );
-};
+  )
+}
 
 const videoDiv = {
   margin: "1% 1% 0 1%",
   width: "18%",
   backgroundColor: Colors.kisEduBlue,
-};
+}
 
-export default VideoPlayer;
+export default VideoPlayer
