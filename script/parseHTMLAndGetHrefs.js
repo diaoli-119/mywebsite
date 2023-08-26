@@ -1,5 +1,3 @@
-
-
 async function parseHTMLAndGetHrefs(url = 'https://eksvideo.com/videos/') {
   try {
     const response = await axios.get(url);

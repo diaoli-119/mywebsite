@@ -3,13 +3,12 @@ const getVideoNames = require('./getVideoNames')
 
 const pool = mysql.createPool({
   host: '192.166.225.8',
-  user: 'eksvideo_root',
-  password: 'siS2xshBSxnSXAnH',
-  database: 'eksvideo_videoresources',
+  user: 'sexypoolz_root',
+  password: 'wMMCJftG7Dxa43AE',
+  database: 'sexypoolz_root',
 });
 
 async function insertVideoNames() {
-  // await createVideoSourceTable()
   const nameList = await getVideoNames('F:/video/jpmm');
   console.log('nameList =', nameList);
   try {
