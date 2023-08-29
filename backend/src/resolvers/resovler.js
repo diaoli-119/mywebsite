@@ -1,4 +1,4 @@
-const GraphQLJSON = require('graphql-type-json');
+const GraphQLJSON = require("graphql-type-json")
 
 const resolvers = {
   JSON: GraphQLJSON,
@@ -6,9 +6,10 @@ const resolvers = {
   Query: {
     hello: () => "Hello world",
     getVideoUrls: async (_, __, { dataSources }) => {
-      const idAndLinks = await dataSources.VideoURLS.getVideoUrls();
-      console.log('idAndLinks =', idAndLinks);
-      return { items: idAndLinks };
+      console.log("getVideoUrls")
+      const idAndLinks = await dataSources.VideoURLS.getVideoUrls()
+      console.log("idAndLinks =", idAndLinks)
+      return { items: idAndLinks }
     },
   },
 
@@ -17,20 +18,20 @@ const resolvers = {
       const verifiedUserInfo = dataSources.Accounts.signIn({
         userEmail: args.email,
         userPassword: args.password,
-      });
-      return verifiedUserInfo;
+      })
+      return verifiedUserInfo
     },
     register: async (_, args, { dataSources }) => {
       const registeredUser = await dataSources.Accounts.register({
         userEmail: args.email,
         userPassword: args.password,
         confirmPassword: args.confirmPassword,
-      });
-      return registeredUser;
+      })
+      return registeredUser
     },
   },
-};
+}
 
 module.exports = {
   resolvers,
-};
+}

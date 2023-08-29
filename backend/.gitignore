@@ -5,11 +5,8 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-
-# production
-/build
+/src/certificate.crt
+/src/private.key
 
 # misc
 .DS_Store
@@ -21,3 +18,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+package-lock.json
